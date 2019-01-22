@@ -6,9 +6,9 @@
   <link rel="stylesheet" type="text/css" href="pocket-calculator.css">
   </head>
 
-  <body>
+  <body onload="clearCalc()">
 
-      <div class=calculator-screen>
+      <div class=calculator>
       <form name="calc">
         <input name="display" disabled >
       </form>
@@ -31,8 +31,8 @@
     <button id="multiplcationButton" class=function-buttons onclick="insert('*')">×</button>
     <button id="divisionButton" class=function-buttons onclick="insert('/')">÷</button>
     <button id="clearButton" class=clear-button onclick="clearCalc()">AC</button>
-    <button id="negativeButton" class="clear-button">+/-</button>
-    <button id="percentButton" class="clear-button">%</button>
+    <button id="negativeButton" class="clear-button" onclick="numberNegation()">+/-</button>
+    <button id="percentButton" class="clear-button" onclick="numberPercentage()">%</button>
 
   </body>
 </html>
