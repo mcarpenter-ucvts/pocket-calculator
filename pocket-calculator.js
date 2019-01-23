@@ -10,23 +10,26 @@ var opInserted = false;
 var afterEqualLastSym = false;
 var exponentialAlert;
 var firstNegationStatus = false;
+var negated = false;
   console.log("varStatus", afterEqualLastSym, opInserted, executed, decimalStatInsert, piInsertStatus, decimalNumInsert);
-// BREAK //
-function insert(num){
+
+function number(num){
   if(executed == false){
   document.calc.display.value=""
   executed = true;
 }
-// BREAK //
+
 if(num === '*' || num === '/' || num === '+'|| num === '-'){
-  if(expressionArray[expressionArray.length - 1] == '+' || expressionArray[expressionArray.length - 1] == '-' || expressionArray[expressionArray.length -1 == '*' || expressionArray[expressionArray.length - 1] == '/']){
+  console.log(negated)
+  if(expressionArray[expressionArray.length - 1] == '+' || expressionArray[expressionArray.length - 1] == '-' || expressionArray[expressionArray.length -1 == '*'] || expressionArray[expressionArray.length - 1] == '/'){
     expressionArray.pop();
     expressionArray.push(num);
     opInserted = true;
     console.log("raw array" , expressionArray);
   }
+
 }
-// BREAK //
+
   if(opInserted == false){
     document.calc.display.value = document.calc.display.value + num;
     expressionArray.push(num)
@@ -36,26 +39,26 @@ if(num === '*' || num === '/' || num === '+'|| num === '-'){
   if(Number(document.calc.display.value.length) <= 10){
     document.calc.display.value = document.calc.display.value
   }else{
-    document.getElementById("buttonNum0").disabled = true;
-    document.getElementById("buttonNum1").disabled = true;
-    document.getElementById("buttonNum2").disabled = true;
-    document.getElementById("buttonNum3").disabled = true;
-    document.getElementById("buttonNum4").disabled = true;
-    document.getElementById("buttonNum5").disabled = true;
-    document.getElementById("buttonNum6").disabled = true;
-    document.getElementById("buttonNum7").disabled = true;
-    document.getElementById("buttonNum8").disabled = true;
-    document.getElementById("buttonNum9").disabled = true;
-    document.getElementById("decimalButton").disabled = true;
+    document.getElementById("buttonNumber0").disabled = true;
+    document.getElementById("buttonNumber1").disabled = true;
+    document.getElementById("buttonNumber2").disabled = true;
+    document.getElementById("buttonNumber3").disabled = true;
+    document.getElementById("buttonNumber4").disabled = true;
+    document.getElementById("buttonNumber5").disabled = true;
+    document.getElementById("buttonNumber6").disabled = true;
+    document.getElementById("buttonNumber7").disabled = true;
+    document.getElementById("buttonNumber8").disabled = true;
+    document.getElementById("buttonNumber9").disabled = true;
+    document.getElementById("deciButton").disabled = true;
     document.getElementById("piButton").disabled = true;
   }
-  // BREAK //
+
   if(decimalNumInsert == false){
  let commaInput = Number(document.calc.display.value.split(",").join("")).toLocaleString();
  document.calc.display.value = commaInput;
   }
 }
-function clearCalc(){
+function displayClear(){
   afterEqualLastSym = false;
   opInserted = false
   document.calc.display.value=0;
@@ -68,21 +71,21 @@ function clearCalc(){
   firstNegationStatus = false
   console.log("status", afterEqualLastSym, opInserted, executed, decimalStatInsert, piInsertStatus, decimalNumInsert)
     expressionArray = [];
-    // BREAK //
-    document.getElementById("buttonNum0").disabled = false;
-    document.getElementById("buttonNum1").disabled = false;
-    document.getElementById("buttonNum2").disabled = false;
-    document.getElementById("buttonNum3").disabled = false;
-    document.getElementById("buttonNum4").disabled = false;
-    document.getElementById("buttonNum5").disabled = false;
-    document.getElementById("buttonNum6").disabled = false;
-    document.getElementById("buttonNum7").disabled = false;
-    document.getElementById("buttonNum8").disabled = false;
-    document.getElementById("buttonNum9").disabled = false;
+
+    document.getElementById("buttonNumber0").disabled = false;
+    document.getElementById("buttonNumber1").disabled = false;
+    document.getElementById("buttonNumber2").disabled = false;
+    document.getElementById("buttonNumber3").disabled = false;
+    document.getElementById("buttonNumber4").disabled = false;
+    document.getElementById("buttonNumber5").disabled = false;
+    document.getElementById("buttonNumber6").disabled = false;
+    document.getElementById("buttonNumber7").disabled = false;
+    document.getElementById("buttonNumber8").disabled = false;
+    document.getElementById("buttonNumber9").disabled = false;
     document.getElementById("piButton").disabled = false;
-    document.getElementById("decimalButton").disabled = false;
+    document.getElementById("deciButton").disabled = false;
 }
-function clearOnOp(){
+function clearDisplayWithSign(){
   opInserted = false
    i = i = 7;
    console.log("iOnClearOP", i)
@@ -94,41 +97,42 @@ function clearOnOp(){
   piInsertStatus = false;
   decimalNumInsert = false;
   firstNegationStatus = true;
-  // BREAK //
-  document.getElementById("buttonNum0").disabled = false;
-  document.getElementById("buttonNum1").disabled = false;
-  document.getElementById("buttonNum2").disabled = false;
-  document.getElementById("buttonNum3").disabled = false;
-  document.getElementById("buttonNum4").disabled = false;
-  document.getElementById("buttonNum5").disabled = false;
-  document.getElementById("buttonNum6").disabled = false;
-  document.getElementById("buttonNum7").disabled = false;
-  document.getElementById("buttonNum8").disabled = false;
-  document.getElementById("buttonNum9").disabled = false;
+
+  document.getElementById("buttonNumber0").disabled = false;
+  document.getElementById("buttonNumber1").disabled = false;
+  document.getElementById("buttonNumber2").disabled = false;
+  document.getElementById("buttonNumber3").disabled = false;
+  document.getElementById("buttonNumber4").disabled = false;
+  document.getElementById("buttonNumber5").disabled = false;
+  document.getElementById("buttonNumber6").disabled = false;
+  document.getElementById("buttonNumber7").disabled = false;
+  document.getElementById("buttonNumber8").disabled = false;
+  document.getElementById("buttonNumber9").disabled = false;
  document.getElementById("piButton").disabled = false;
   document.getElementById("decimalButton").disabled = false;
 }
-function equal(){
+function equalsButton(){
+  negated = false;
   symbolStatus = false
   firstPercent = false;
   piInsertStatus = false;
   afterEqualLastSym = true;
 
 
-  // BREAK //
-  document.getElementById("decimalButton").disabled = true;
-  document.getElementById("buttonNum0").disabled = true;
-  document.getElementById("buttonNum1").disabled = true;
-  document.getElementById("buttonNum2").disabled = true;
-  document.getElementById("buttonNum3").disabled = true;
-  document.getElementById("buttonNum4").disabled = true;
-  document.getElementById("buttonNum5").disabled = true;
-  document.getElementById("buttonNum6").disabled = true;
-  document.getElementById("buttonNum7").disabled = true;
-  document.getElementById("buttonNum8").disabled = true;
-  document.getElementById("buttonNum9").disabled = true;
+
+  document.getElementById("deciButton").disabled = true;
+  document.getElementById("buttonNumber0").disabled = true;
+  document.getElementById("buttonNumber1").disabled = true;
+  document.getElementById("buttonNumber2").disabled = true;
+  document.getElementById("buttonNumber3").disabled = true;
+  document.getElementById("buttonNumber4").disabled = true;
+  document.getElementById("buttonNumber5").disabled = true;
+  document.getElementById("buttonNumber6").disabled = true;
+  document.getElementById("buttonNumber7").disabled = true;
+  document.getElementById("buttonNumber8").disabled = true;
+  document.getElementById("buttonNumber9").disabled = true;
   document.getElementById("piButton").disabled = true;
-  // BREAK //
+
   let caclEvaluated= eval(expressionArray.join(''));
   if(expressionArray.join(",").includes("e")){
      exponentialAlert = true;
@@ -147,12 +151,12 @@ function equal(){
     document.calc.display.value = caclEvaluated
   }
 
-// BREAK //
+
   if(document.calc.display.value === "Infinity" || document.calc.display.value === "∞" || document.calc.display.value === "NaN") {
     document.calc.display.value = "ERROR";
   }
 }
-function numberNegation(){
+function negativeNumber(){
   document.calc.display.value = document.calc.display.value.split(",").join('')
   let numsCountNeg = document.calc.display.value.length
   document.calc.display.value = document.calc.display.value * -1
@@ -162,16 +166,19 @@ function numberNegation(){
     expressionArray[expressionArray.length - expressionArray.length ]= expressionArray[expressionArray.length - expressionArray.length] *-1
     console.log("negatedNumber" , expressionArray)
     firstNegationStatus = true;
-  }else{
+    negated = true;
+  }else {
     let whereToNegate = expressionArray.length - numsCountNeg
-    while(expressionArray.length >= whereToNegate){
+    if(expressionArray.length >= whereToNegate){
       expressionArray.pop();
+      negated = true;
     }
+
     expressionArray.push(negValue)
   }
 }
 
-function numberPercentage(){
+function percentOfNumber(){
   document.calc.display.value = document.calc.display.value.split(",").join("")
 if(afterEqualLastSym == false){
   if(firstPercent == false){
@@ -179,16 +186,16 @@ if(afterEqualLastSym == false){
     numsCount = numsCount -1
     console.log("nums", numsCount)
   let amountToBeRemoved = expressionArray.length - numsCount
-  //while loop
+
   while(expressionArray.length >= amountToBeRemoved){
     expressionArray.pop();
   }
-  //
+
   document.calc.display.value = Number(document.calc.display.value) / 100
 expressionArray[amountToBeRemoved] = document.calc.display.value
   console.log(expressionArray)
   firstPercent = true;
-  //end of if
+
 }else{
  let numsCount2 = document.calc.display.value.length
  numsCount2 = numsCount2 - i
@@ -199,7 +206,7 @@ expressionArray.splice(expressionArray.length -1)
   expressionArray.push(document.calc.display.value)
 console.log("array", expressionArray)
 console.log("calcDisplay", document.calc.display.value)
-//BREAK//
+
   if(document.calc.display.value>= 0.9999999){
     let expon= Number(document.calc.display.value)
     console.log(typeof expon);
@@ -221,17 +228,17 @@ console.log("calcDisplay", document.calc.display.value)
 }
 
 
-function decimalInsert(num){
+function deciInsert(num){
   if(decimalStatInsert == false){
     document.calc.display.value = document.calc.display.value + num
     expressionArray.push(num)
     console.log("decimal array", expressionArray)
     decimalStatInsert = true;
     decimalNumInsert = true;
-    document.getElementById("decimalButton").disabled = true;
+    document.getElementById("deciButton").disabled = true;
   }
 }
-function piInsert(num){
+function piNumber(num){
   if(piInsertStatus == false){
     document.calc.display.value = ''
     document.calc.display.value = document.calc.display.value + num

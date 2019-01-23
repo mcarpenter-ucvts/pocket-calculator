@@ -2,37 +2,45 @@
 <html>
   <head>
     <title>Pocket Calculator</title>
-  <script type="text/javascript" src="pocket-calculator.js"></script>
-  <link rel="stylesheet" type="text/css" href="pocket-calculator.css">
+  <script type="text/javascript" src="fake.js"></script>
+  <link rel="stylesheet" type="text/css" href="fake.css">
   </head>
 
-  <body onload="clearCalc()">
-
-      <div class=calculator>
+  <body onload="displayClear()">
+    <div class=calculator>
       <form name="calc">
-        <input name="display" disabled >
+        <input name="display" disabled>
       </form>
       </div>
 
-   <button id="decimalButton" class="calc-buttons" onclick="insert('.')">.</button>
-    <button id="buttonNum0" class=zero-button onclick="insert(0)">0</button>
-    <button id="buttonNum1" class="calc-buttons" onclick="insert(1)">1</button>
-    <button id="buttonNum2" class=calc-buttons onclick="insert(2)">2</button>
-    <button id="buttonNum3" class=calc-buttons onclick="insert(3)">3</button>
-    <button id="buttonNum4" class=calc-buttons onclick="insert(4)">4</button>
-    <button id="buttonNum5" class=calc-buttons onclick="insert(5)">5</button>
-    <button id="buttonNum6" class=calc-buttons onclick="insert(6)">6</button>
-    <button id="buttonNum7" class="calc-buttons" onclick="insert(7)">7</button>
-    <button id="buttonNum8" class="calc-buttons"onclick="insert(8)">8</button>
-    <button id="buttonNum9" class="calc-buttons"onclick="insert(9)">9</button>
-    <button id="equalButton" class="function-buttons" onclick="equal()">=</button>
-    <button id="additionButton" class="function-buttons" onclick="insert('+')">+</button>
-    <button id="subtractionButton" class=function-buttons onclick="insert('-')">-</button>
-    <button id="multiplcationButton" class=function-buttons onclick="insert('*')">×</button>
-    <button id="divisionButton" class=function-buttons onclick="insert('/')">÷</button>
-    <button id="clearButton" class=clear-button onclick="clearCalc()">AC</button>
-    <button id="negativeButton" class="clear-button" onclick="numberNegation()">+/-</button>
-    <button id="percentButton" class="clear-button" onclick="numberPercentage()">%</button>
+
+    <div class="core-buttons">
+      <button id="deciButton" class="calc-buttons" onclick="deciInsert('.');">.</button>
+    <button id="buttonNumber1" class="calc-buttons" onclick="number(1)">1</button>
+    <button id="buttonNumber2" class=calc-buttons onclick="number(2)">2</button>
+    <button id="buttonNumber3" class=calc-buttons onclick="number(3)">3</button>
+    <button id="buttonNumber4" class=calc-buttons onclick="number(4)">4</button>
+    <button id="buttonNumber5" class=calc-buttons onclick="number(5)">5</button>
+    <button id="buttonNumber6" class=calc-buttons onclick="number(6)">6</button>
+    <button id="buttonNumber7" class="calc-buttons" onclick="number(7)">7</button>
+    <button id="buttonNumber8" class="calc-buttons"onclick="number(8)">8</button>
+    <button id="buttonNumber9" class="calc-buttons"onclick="number(9)">9</button>
+    <button id="buttonNumber0" class=zero-button onclick="number(0)">0</button>
+    </div>
+    <div class="right-side-buttons">
+    <button id="equalButton" class="function-buttons" onclick="equalsButton();">=</button>
+    <button id="addiButton" class="function-buttons" onclick="number('+'); clearDisplayWithSign();">+</button>
+    <button id="subtrButton" class=function-buttons onclick="number('-'); clearDisplayWithSign();">-</button>
+    <button id="multipButton" class=function-buttons onclick="number('*'); clearDisplayWithSign();">×</button>
+    <button id="divideButton" class=function-buttons onclick="number('/'); clearDisplayWithSign();">÷</button>
+    <button id ="piButton" class=function-buttons onclick=piNumber(3.1415926)>π</button>
+    </div>
+    <div class="top-row-buttons">
+    <button id="acButton" class="clear-button" onclick="displayClear()">AC</button>
+    <button id="negateButton" class="last-buttons" onclick="negativeNumber();">+/-</button>
+    <button id="percentButton" class="last-buttons" onclick="percentOfNumber();">%</button>
+    <div>
+
 
   </body>
-</html>
+</html

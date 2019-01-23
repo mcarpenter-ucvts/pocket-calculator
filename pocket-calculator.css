@@ -3,22 +3,22 @@
   top: 148px;
   left: 190px;
 }
-#divisionButton{
+#divideButton{
   position:absolute;
   left:802px;
   top:148px;
 }
-#multiplcationButton{
+#multipButton{
   position:absolute;
   left:802px;
   top:299px;
 }
-#subtractionButton{
+#subtrButton{
   position:absolute;
   left:802px;
   top:450px;
 }
-#additionButton{
+#addiButton{
   position:absolute;
   left:802px;
   top:601px;
@@ -28,67 +28,67 @@
   left:802px;
   top:752px;
 }
-#decimalButton{
+#deciButton{
   position:absolute;
   left:651px;
   top:752px;
 }
-#buttonNum0{
+#buttonNumber0{
   position:absolute;
   left:349px;
   top:752px;
 }
-#buttonNum1{
+#buttonNumber1{
   position:absolute;
   left:349px;
   top:601px;
 }
-#buttonNum2{
+#buttonNumber2{
   position:absolute;
   left:500px;
   top:601px;
 }
-#buttonNum3{
+#buttonNumber3{
   position:absolute;
   left:651px;
   top:601px;
 }
-#buttonNum4{
+#buttonNumber4{
   position:absolute;
   left:349px;
   top:450px;
 }
-#buttonNum5{
+#buttonNumber5{
   position:absolute;
   left: 500px;
   top: 450px;
 }
-#buttonNum6{
+#buttonNumber6{
   position:absolute;
   left:651px;
   top:450px;
 }
-#buttonNum7{
+#buttonNumber7{
 position:absolute;
 left:349px;
 top:299px;
 }
-#buttonNum8{
+#buttonNumber8{
 position:absolute;
 left:500px;
 top:299px;
 }
-#buttonNum9{
+#buttonNumber9{
 position:absolute;
 left:651px;
 top:299px;
 }
-#clearButton{
+#acButton{
   position:absolute;
   left:349px;
   top:148px;
 }
-#negativeButton {
+#negateButton {
   position: absolute;
   left: 500px;
   top: 148px;
@@ -141,6 +141,17 @@ body {
   border-radius: 50%;
 }
 .clear-button{
+  width:150px;
+  height: 150px;
+  background-color: #999999;
+  color: black;
+  border: 2px solid black;
+  font-size: 48px;
+  border-radius: 50%;
+  font-family: sans-serif;
+}
+
+.last-buttons{
   width:150px;
   height: 150px;
   background-color: #999999;
