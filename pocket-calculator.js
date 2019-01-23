@@ -50,7 +50,6 @@ if(num === '*' || num === '/' || num === '+'|| num === '-'){
     document.getElementById("buttonNumber8").disabled = true;
     document.getElementById("buttonNumber9").disabled = true;
     document.getElementById("deciButton").disabled = true;
-    document.getElementById("piButton").disabled = true;
   }
 
   if(decimalNumInsert == false){
@@ -82,7 +81,6 @@ function displayClear(){
     document.getElementById("buttonNumber7").disabled = false;
     document.getElementById("buttonNumber8").disabled = false;
     document.getElementById("buttonNumber9").disabled = false;
-    document.getElementById("piButton").disabled = false;
     document.getElementById("deciButton").disabled = false;
 }
 function clearDisplayWithSign(){
@@ -108,8 +106,7 @@ function clearDisplayWithSign(){
   document.getElementById("buttonNumber7").disabled = false;
   document.getElementById("buttonNumber8").disabled = false;
   document.getElementById("buttonNumber9").disabled = false;
- document.getElementById("piButton").disabled = false;
-  document.getElementById("decimalButton").disabled = false;
+  document.getElementById("deciButton").disabled = false;
 }
 function equalsButton(){
   negated = false;
@@ -131,7 +128,6 @@ function equalsButton(){
   document.getElementById("buttonNumber7").disabled = true;
   document.getElementById("buttonNumber8").disabled = true;
   document.getElementById("buttonNumber9").disabled = true;
-  document.getElementById("piButton").disabled = true;
 
   let caclEvaluated= eval(expressionArray.join(''));
   if(expressionArray.join(",").includes("e")){
@@ -236,14 +232,5 @@ function deciInsert(num){
     decimalStatInsert = true;
     decimalNumInsert = true;
     document.getElementById("deciButton").disabled = true;
-  }
-}
-function piNumber(num){
-  if(piInsertStatus == false){
-    document.calc.display.value = ''
-    document.calc.display.value = document.calc.display.value + num
-    expressionArray.push(num)
-    console.log("array with PI", expressionArray)
-    piInsertStatus = true;
   }
 }
